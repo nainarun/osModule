@@ -38,3 +38,8 @@ def read_file(self, filename):
             print(f"[{self.node_directory}] File '{filename}' deleted.")
         else:
             print(f"[{self.node_directory}] File '{filename}' not found.")
+            def list_files(self):
+        files = [f for f in os.listdir(self.node_directory)
+                 if os.path.isfile(os.path.join(self.node_directory, f))]
+        print(f"Files in '{self.node_directory}': {files}")
+        return files
