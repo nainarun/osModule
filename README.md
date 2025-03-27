@@ -31,3 +31,10 @@ def read_file(self, filename):
             print(f"[{self.node_directory}] File '{filename}' updated.")
         else:
             print(f"[{self.node_directory}] File '{filename}' does not exist.")
+            def delete_file(self, filename):
+        filepath = os.path.join(self.node_directory, filename)
+        if os.path.exists(filepath):
+            os.remove(filepath)
+            print(f"[{self.node_directory}] File '{filename}' deleted.")
+        else:
+            print(f"[{self.node_directory}] File '{filename}' not found.")
