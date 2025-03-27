@@ -23,3 +23,11 @@ def read_file(self, filename):
         except FileNotFoundError:
             print(f"[{self.node_directory}] File '{filename}' not found.")
             return None
+            def update_file(self, filename, new_content):
+        filepath = os.path.join(self.node_directory, filename)
+        if os.path.exists(filepath):
+            with open(filepath, 'a') as f:
+                f.write(new_content)
+            print(f"[{self.node_directory}] File '{filename}' updated.")
+        else:
+            print(f"[{self.node_directory}] File '{filename}' does not exist.")
