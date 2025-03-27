@@ -15,3 +15,11 @@ class FileManager:
         with open(filepath, 'w') as f:
             f.write(content)
         print(f"[{self.node_directory}] File '{filename}' created.")
+def read_file(self, filename):
+        filepath = os.path.join(self.node_directory, filename)
+        try:
+            with open(filepath, 'r') as f:
+                return f.read()
+        except FileNotFoundError:
+            print(f"[{self.node_directory}] File '{filename}' not found.")
+            return None
